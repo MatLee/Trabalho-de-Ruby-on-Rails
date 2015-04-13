@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Academico</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+
+	<body>
+		<div id="main">
+			<div id="header">
+				<div id="logo">
+					<div id="logo_text">
+						<!-- class="logo_colour", allows you to change the colour of the text -->
+          				<h1><a href="index.html">colour<span class="logo_colour">blue</span></a></h1>
+          				<h2>Simple. Contemporary. Website Template.</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<%= yield %>
+
+	</body>
+
+</html>

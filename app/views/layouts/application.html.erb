@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Academico</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+  		<%= stylesheet_link_tag :all %>
+  		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  		<%= csrf_meta_tag %>
+	</head>
+
+	<body>
+		<div id="main">
+			<div id="header">
+				<div id="logo">
+					<div id="logo_text">
+						<!-- class="logo_colour", allows you to change the colour of the text -->
+          				<h1><a href="index.html">Colégio<span class="logo_colour">Umbra</span></a></h1>
+          				<h2>Referência em Ensino!</h2>
+					</div>
+				</div>
+
+				<div id="menubar">
+					<ul id="menu">
+						<!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+						<li><%= link_to 'Alunos', alunos_path %> </li>
+				 		<li><%= link_to 'Disciplinas', disciplinas_path %> </li>
+				 		<li><%= link_to 'Notas', notas_path %> </li>
+					</ul>
+				</div>
+			</div>
+
+
+			<div id="site_content">
+				<div id="content">
+					<!-- insert the page content here -->
+					<!-- <h1>Cadastro</h1> -->
+					<%= yield %>
+				</div>
+			</div>
+		</div>
+
+		<div id="content_footer"></div>
+		<div id="footer">
+      	Copyright &copy; 2015 | PLAYREPLAY
+		</div>
+	</body>
+
+</html>

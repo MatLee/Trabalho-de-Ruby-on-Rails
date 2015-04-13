@@ -1,0 +1,36 @@
+# coding: utf-8
+require 'rails_helper'
+
+feature 'gerenciar Nota' do
+
+  scenario 'incluir Nota' do # , :js => true do
+    visit new_nota_path
+    preencher_e_verificar_nota
+  end
+
+  scenario 'alterar Nota' do #, :js => true do
+    nota = FactoryGirl.create(:nota)
+    visit edit_nota_path(nota)
+    preencher_e_verificar_nota
+  end
+
+  scenario 'excluir nota' do #, :javascript => true do
+    nota = FactoryGirl.create(:nota)
+    visit notas_path
+    click_link 'Excluir'
+  end
+
+  def preencher_e_verificar_nota
+    fill_in 'P1', :with => 3.2
+    fill_in 'P2', :with => 7.0
+	fill_in 'P3', :with => 9.5
+
+    click_button 'Salvar'
+
+    expect(page).to have_content 'P1: 3.2'
+    expect(page).to have_content 'P2: 7.0'
+	expect(page).to have_content 'P3: 9.5'
+
+  end
+
+end
